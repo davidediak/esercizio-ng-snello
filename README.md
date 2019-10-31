@@ -1,3 +1,9 @@
+To run the backend (snello):
+
+`docker run -t -i -p 8080:8080 -v D:/Documents/Angular/esercizio-ng-snello/snello/db/:/home/snello/db -e JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8787 snellocms/snello-all-in-one`
+
+
+
 # EsercizioNgSnello
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
