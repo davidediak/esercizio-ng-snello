@@ -1,0 +1,45 @@
+2019-10-27 10:57:07 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:08 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:09 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:13 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:22 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:23 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:25 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:28 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:53 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:57:56 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:58:24 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "null"; SQL statement:
+ SELECT  *  FROM Posts WHERE id = ? [22018-199]
+2019-10-27 10:59:16 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "attachments" not found; SQL statement:
+ SELECT COUNT(*) AS SIZE_OF FROM attachments [42102-199]
+2019-10-27 11:26:57 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "d0929d25" not found; SQL statement:
+ SELECT  *  FROM d0929d25-86b3-488d-ad14-654ce60f0fe6 WHERE attachments_id= ?   AND join_table= ?   LIMIT  ? , ?  [42102-199]
+2019-10-31 14:10:13 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "f4a4b496" not found; SQL statement:
+ SELECT  *  FROM f4a4b496-4d0f-459d-b6cc-299939252171 WHERE autori_id= ?   AND join_table= ?   LIMIT  ? , ?  [42102-199]
+2019-10-31 22:45:49 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "authors" not found; SQL statement:
+ SELECT COUNT(*) AS SIZE_OF FROM authors [42102-199]
