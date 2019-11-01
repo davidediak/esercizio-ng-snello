@@ -28,6 +28,10 @@ export class ApiCallsService {
     );
   }
 
+  getAuthors(): Observable<Author[]> {
+    return this.http.get<Author[]>(this.snelloUrl + '/autori');
+  }
+
   getAuthor(id: string): Observable<Author> {
     return this.http.get<Author>(this.snelloUrl + '/autori/' + id);
   }

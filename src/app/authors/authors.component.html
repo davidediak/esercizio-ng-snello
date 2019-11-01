@@ -1,1 +1,5 @@
-<p>authors works!</p>
+<div *ngFor="let author of authors" class="container">
+  <mat-card class="example-card">
+    {{ author.nome }} {{ author.cognome }}
+  </mat-card>
+</div>
