@@ -1,0 +1,10 @@
+<div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]="author.nome">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input matInput placeholder="Cognome" [(ngModel)]="author.cognome">
+      </mat-form-field>
+      <button mat-raised-button color="privary" (click)="modifyAuthor()">Modifica</button>
+  </div>

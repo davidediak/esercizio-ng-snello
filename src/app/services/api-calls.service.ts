@@ -36,6 +36,18 @@ export class ApiCallsService {
     return this.http.get<Author>(this.snelloUrl + '/autori/' + id);
   }
 
+  postAuthor(author: Author): Observable<Author> {
+    return this.http.post<Author>(this.snelloUrl + '/autori/', author);
+  }
+
+  putAuthor(id: string, author: Author): Observable<Author> {
+    return this.http.put<Author>(this.snelloUrl + '/autori/'+ id, author);
+  }
+
+  deleteAuthor(id: string): Observable<Author> {
+    return this.http.delete<Author>(this.snelloUrl + '/autori/' + id);
+  }
+
   getAttachmentPath(id: string): Observable<string> {
     return this.http
       .get<Attachment>(this.snelloUrl + '/attachments/' + id)
