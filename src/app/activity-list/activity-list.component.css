@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.activity {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

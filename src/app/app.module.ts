@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthorsComponent } from './authors/authors.component';
@@ -43,6 +44,7 @@ import { AdminAuthorsModifyComponent } from './admin-authors-modify/admin-author
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     FormsModule,
     AppRoutingModule
   ],

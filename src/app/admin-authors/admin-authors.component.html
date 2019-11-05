@@ -1,9 +1,13 @@
 <div *ngFor="let author of elements" class="container">
     <mat-card class="example-card">
-      {{ author.nome }} {{ author.cognome }}
-      <button mat-raised-button color="primary" routerLink="/admin/authors/modify/{{author.id}}">Modifica Autore</button>
-      <button mat-raised-button color="warn" (click)="removeAuthor(author.id)">Rimuovi Autore</button>
+      <span class="to-left">{{ author.nome }} {{ author.cognome }}</span>
+
+      <mat-icon  color="primary" routerLink="/admin/authors/modify/{{author.id}}">settings_applications</mat-icon>
+      <mat-icon  style="margin-left:15px" color="warn" (click)="removeAuthor(author.id)">delete</mat-icon>
     </mat-card>
   </div>
   
-  <button mat-raised-button color="primary" routerLink="/admin/authors/add">Aggiungi Autore</button>
+  <div class="footer">
+    <button mat-raised-button color="secondary" (click)="goBack()">Indietro</button>
+    <button mat-raised-button color="primary" routerLink="/admin/authors/add">Aggiungi Autore</button>
+</div>
