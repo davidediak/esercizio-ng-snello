@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCallsService } from '../services/api-calls.service';
+import { PostsService } from '../services/posts.service';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
 
@@ -11,16 +11,16 @@ import { Post } from '../models/post';
 export class PostComponent implements OnInit {
   posts: Post[];
 
-  constructor(private apiCallsService: ApiCallsService) {}
+  constructor(private postsService: PostsService) {}
 
   ngOnInit() {
     this.getPosts();
   }
 
   getPosts(): void {
-    this.apiCallsService.getPosts().subscribe(posts => {
+    this.postsService.getList().subscribe(posts => {
       posts.map(post => {
-        this.apiCallsService
+        this.postsService
           .getAttachmentPath(post.attachments)
           .subscribe(path => (post.pathImage = path));
       });

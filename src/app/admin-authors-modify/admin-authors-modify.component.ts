@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Author} from '../models/author';
-import {ApiCallsService} from '../services/api-calls.service';
+import { AuthorsService } from '../services/authors.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminAuthorsModifyComponent implements OnInit {
   author: Author = {nome: '', cognome: ''};
 
-  constructor(private route: ActivatedRoute, private apiCallsService: ApiCallsService) { }
+  constructor(private route: ActivatedRoute, private authorsService: AuthorsService) { }
 
   ngOnInit() {
   const id = this.route.snapshot.paramMap.get('id');
@@ -19,7 +19,7 @@ export class AdminAuthorsModifyComponent implements OnInit {
   }
 
   getAuthor(id){
-    this.apiCallsService.getAuthor(id).subscribe( author => {
+    this.authorsService.get(id).subscribe( author => {
       this.author = author;
       console.log(this.author);
     });
@@ -27,7 +27,7 @@ export class AdminAuthorsModifyComponent implements OnInit {
 
   modifyAuthor() {
     console.log(this.author);
-    this.apiCallsService.putAuthor(this.author.id, this.author).subscribe();
+    this.authorsService.put(this.author.id, this.author).subscribe();
     this.goBack();
   }
 

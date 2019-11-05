@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCallsService } from '../services/api-calls.service';
+import { AuthorsService } from '../services/authors.service';
 import { Author } from '../models/author';
 
 @Component({
@@ -11,15 +11,15 @@ export class AdminAuthorsComponent implements OnInit {
 
   authors: Author[];
 
-  constructor(private apiCallsService: ApiCallsService) { }
+  constructor(private authorService: AuthorsService) { }
 
   ngOnInit() {
     this.getAuthors();
   }
 
   getAuthors() {
-    this.apiCallsService
-      .getAuthors()
+    this.authorService
+      .getList()
       .subscribe(authors => (this.authors = authors));
   }
 
@@ -27,8 +27,8 @@ export class AdminAuthorsComponent implements OnInit {
     let authorToRemoveIdx = this.authors.findIndex( a => a.id === id);
     this.authors.splice(authorToRemoveIdx);
     console.log(this.authors);
-    this.apiCallsService
-    .deleteAuthor(id)
+    this.authorService
+    .delete(id)
     .subscribe();
   }
   

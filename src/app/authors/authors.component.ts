@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCallsService } from '../services/api-calls.service';
+import { AuthorsService } from '../services/authors.service';
 import { Author } from '../models/author';
 
 @Component({
@@ -10,15 +10,15 @@ import { Author } from '../models/author';
 export class AuthorsComponent implements OnInit {
   authors: Author[];
 
-  constructor(private apiCallsService: ApiCallsService) {}
+  constructor(private authorsService: AuthorsService) {}
 
   ngOnInit() {
     this.getAuthors();
   }
 
   getAuthors() {
-    this.apiCallsService
-      .getAuthors()
+    this.authorsService
+      .getList()
       .subscribe(authors => (this.authors = authors));
   }
 }

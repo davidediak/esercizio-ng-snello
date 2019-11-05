@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Author} from '../models/author';
-import {ApiCallsService} from '../services/api-calls.service';
+import { AuthorsService } from '../services/authors.service';
 
 @Component({
   selector: 'app-admin-authors-add',
@@ -11,13 +11,13 @@ export class AdminAuthorsAddComponent implements OnInit {
 
   author: Author = {nome: '', cognome: ''};
 
-  constructor(private apiCallsService: ApiCallsService) { }
+  constructor(private authorService: AuthorsService) { }
 
   ngOnInit() {
   }
 
   addAuthor() {
-    this.apiCallsService.postAuthor(this.author).subscribe();
+    this.authorService.post(this.author).subscribe();
     console.log(this.author);
     this.goBack();
   }
