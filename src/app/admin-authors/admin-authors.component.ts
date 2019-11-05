@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorsService } from '../services/authors.service';
 import { Author } from '../models/author';
+import { AbstractListComponent} from '../abstract/abstract-list-component/abstract-list-component.component';
 
 @Component({
   selector: 'app-admin-authors',
   templateUrl: './admin-authors.component.html',
   styleUrls: ['./admin-authors.component.css']
 })
-export class AdminAuthorsComponent implements OnInit {
+export class AdminAuthorsComponent extends AbstractListComponent<Author> implements OnInit {
 
   authors: Author[];
 
-  constructor(private authorService: AuthorsService) { }
+  constructor(private authorsService: AuthorsService) {
+    super(authorsService);
+   }
 
   ngOnInit() {
-    this.getAuthors();
+    console.log('init');
+    this.getList();
   }
 
-  getAuthors() {
-    this.authorService
-      .getList()
-      .subscribe(authors => (this.authors = authors));
-  }
 
   removeAuthor(id: string) {
-    let authorToRemoveIdx = this.authors.findIndex( a => a.id === id);
-    this.authors.splice(authorToRemoveIdx);
-    console.log(this.authors);
-    this.authorService
+    let authorToRemoveIdx = this.elements.findIndex( a => a.id === id);
+    this.elements.splice(authorToRemoveIdx,1);
+    console.log(this.elements);
+    this.authorsService
     .delete(id)
     .subscribe();
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
+import { AuthorsService } from '../services/authors.service';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
 
@@ -11,7 +12,7 @@ import { Post } from '../models/post';
 export class PostComponent implements OnInit {
   posts: Post[];
 
-  constructor(private postsService: PostsService) {}
+  constructor(private postsService: PostsService, private authorsService: AuthorsService) {}
 
   ngOnInit() {
     this.getPosts();
@@ -23,6 +24,10 @@ export class PostComponent implements OnInit {
         this.postsService
           .getAttachmentPath(post.attachments)
           .subscribe(path => (post.pathImage = path));
+
+        this.authorsService
+          .get(post.autore_id)
+          .subscribe(autore => (post.autore = autore));
       });
       console.log(...posts);
       return (this.posts = posts);

@@ -2,36 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import {Author} from '../models/author';
 import { AuthorsService } from '../services/authors.service';
 import { ActivatedRoute } from '@angular/router';
+import {AbstractEditComponent} from '../abstract/abstract-edit-component.component';
 
 @Component({
   selector: 'app-admin-authors-modify',
   templateUrl: './admin-authors-modify.component.html',
   styleUrls: ['./admin-authors-modify.component.css']
 })
-export class AdminAuthorsModifyComponent implements OnInit {
-  author: Author = {nome: '', cognome: ''};
+export class AdminAuthorsModifyComponent extends AbstractEditComponent<Author> implements OnInit {
+  element: Author = new Author();
+  // {nome: '', cognome: ''};
 
-  constructor(private route: ActivatedRoute, private authorsService: AuthorsService) { }
+  constructor(private route: ActivatedRoute, private authorsService: AuthorsService) {
+    super(authorsService);
+   }
 
   ngOnInit() {
   const id = this.route.snapshot.paramMap.get('id');
-  this.getAuthor(id);
-  }
-
-  getAuthor(id){
-    this.authorsService.get(id).subscribe( author => {
-      this.author = author;
-      console.log(this.author);
-    });
+  this.get(id);
   }
 
   modifyAuthor() {
-    console.log(this.author);
-    this.authorsService.put(this.author.id, this.author).subscribe();
+    console.log(this.element);
+    this.put(this.element.id, this.element);
     this.goBack();
   }
 
-  private goBack() {
-    window.history.back();
-  }
 }

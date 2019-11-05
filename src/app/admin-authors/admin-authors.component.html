@@ -1,4 +1,4 @@
-<div *ngFor="let author of authors" class="container">
+<div *ngFor="let author of elements" class="container">
     <mat-card class="example-card">
       {{ author.nome }} {{ author.cognome }}
       <button mat-raised-button color="primary" routerLink="/admin/authors/modify/{{author.id}}">Modifica Autore</button>
